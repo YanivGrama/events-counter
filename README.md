@@ -27,7 +27,7 @@ script -> [Raw Events] -> [Parsed Events] -> [Countable Events] -> [Statistic Up
 * Use external DB for better scalability (support fot multiple app instances) and keep app stateless
 * Use sharding for faster consuming (write to db in parallel)
 
-## UI
+## API
 http://localhost:8080/ 
 ![main ui](https://github.com/YanivGrama/events-counter/blob/master/images/img_1.png)
 
