@@ -13,15 +13,19 @@ The application reads events from `stdin` and collects statistics (words/types c
 3) go to http://localhost:8080
 4) Enjoy life!
 
-## Short Description
 
-### Actors Pipeline
-[Raw Events] -> [Parsed Events] -> [Countable Events] -> [Statistic Updater] 
+## Actors Pipeline
+The application uses actors to handle the stream.
+Each Actor has only one task and passes the result to the next Actor.
+They communicating with each other by channels (similar to blocking queue).
+
+script -> [Raw Events] -> [Parsed Events] -> [Countable Events] -> [Statistic Updater] -> db
 
 ## Things for improvement (TODO LIST)
 * Use dependency injection framework
 * Use external queue like Kafka for better back-pressure handling
 * Use external DB for better scalability (support fot multiple app instances) and keep app stateless
+* Use sharding for faster consuming (write to db in parallel)
 
 ## UI
 http://localhost:8080/ 
